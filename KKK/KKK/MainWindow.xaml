@@ -1,0 +1,513 @@
+﻿<Window Icon="{StaticResource AppIcon}"
+        x:Class="KKK.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KKK"
+        mc:Ignorable="d"
+        Title="Playground for computer game" Height="630" Width="1000" ResizeMode="NoResize" Loaded="Window_Loaded">
+    <Grid>
+        <TabControl x:Name="products">
+            <TabItem x:Name="userInfo">
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="3">User info</TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <StackPanel>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="415"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <DataGrid Grid.Row="0" x:Name="userInfoDataGrid"/>
+                            <StackPanel Grid.Row="1">
+                                <Grid Margin="0,5,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="200"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="First Name:"/>
+                                    <TextBox x:Name="fir_name" Grid.Column="1" Margin="10,0,0,0"/>
+                                </Grid>
+                                <Grid Margin="0,5,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="200"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="Second Name:"/>
+                                    <TextBox x:Name="sec_name" Grid.Column="1" Margin="10,0,0,0"/>
+                                </Grid>
+                                <Grid Margin="0,5,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="200"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="Mail:"/>
+                                    <TextBox x:Name="mails" Grid.Column="1" Margin="10,0,0,0"/>
+                                </Grid>
+                                <Grid Margin="0,5,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="200"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="Password:"/>
+                                    <TextBox x:Name="pasword" Grid.Column="1" Margin="10,0,0,0"/>
+                                </Grid>
+                                <Grid Margin="0,5,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="200"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="Roles:"/>
+                                    <TextBox x:Name="rol" Grid.Column="1" Margin="10,0,0,0"/>
+                                </Grid>
+                                <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                                    <Button Content="Додати" Click="AddUseInfo_Click"/>
+                                    <Button Content="Видалити" Margin="10,0,0,0" Click="DeleteUseInfo_Click"/>
+                                    <TextBox x:Name="delete_user" Width="50" Grid.Column="1" Margin="10,0,0,0"/>
+                                    <TextBlock Text=" - User id delete"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem x:Name="user_data_payment">
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="3">User data payment</TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <StackPanel>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="395"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <DataGrid Grid.Row="0" x:Name="user_data_paymentDataGrid1"/>
+
+                            <StackPanel Grid.Row="1">
+                                <Grid Margin="0,5,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="200"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="User id:"/>
+                                    <TextBox x:Name="us_id" Grid.Column="1" Margin="10,0,0,0"/>
+                                </Grid>
+                                <Grid Margin="0,5,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="200"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="Number card:"/>
+                                    <TextBox x:Name="numb_card" Grid.Column="1" Margin="10,0,0,0"/>
+                                </Grid>
+                                <Grid Margin="0,5,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="200"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="Name user:"/>
+                                    <TextBox x:Name="n_us" Grid.Column="1" Margin="10,0,0,0"/>
+                                </Grid>
+                                <Grid Margin="0,5,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="200"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="Type card:"/>
+                                    <TextBox x:Name="typ_card" Grid.Column="1" Margin="10,0,0,0"/>
+                                </Grid>
+                                <Grid Margin="0,5,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="200"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="Date card:"/>
+                                    <TextBox x:Name="dt_card" Grid.Column="1" Margin="10,0,0,0"/>
+                                </Grid>
+                                <Grid Margin="0,5,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="200"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="Postal code:"/>
+                                    <TextBox x:Name="pos_cod" Grid.Column="1" Margin="10,0,0,0"/>
+                                </Grid>
+                                <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                                    <Button Content="Додати" Click="AddUserDataPayment_Click"/>
+                                    <Button Content="Видалити" Margin="10,0,0,0" Click="DeleteUserDataPayment_Click"/>
+                                    <TextBox x:Name="delete_user_data_payment" Width="50" Grid.Column="1" Margin="10,0,0,0"/>
+                                    <TextBlock Text=" - Data id delete"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem x:Name="payment">
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="3">Payment</TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <StackPanel>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="395"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <DataGrid Grid.Row="0" x:Name="paymentDataGrid1"/>
+                            <StackPanel Grid.Row="1">
+                                <Grid Margin="0,5,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="200"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="Payment date:"/>
+                                    <TextBox x:Name="pay_date" Grid.Column="1" Margin="10,0,0,0"/>
+                                </Grid>
+                                <Grid Margin="0,5,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="200"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="Status:"/>
+                                    <TextBox x:Name="statuus" Grid.Column="1" Margin="10,0,0,0"/>
+                                </Grid>
+                                <Grid Margin="0,5,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="200"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="User id:"/>
+                                    <TextBox x:Name="user_id_in_payment" Grid.Column="1" Margin="10,0,0,0"/>
+                                </Grid>
+                                <Grid Margin="0,5,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="200"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="Game id:"/>
+                                    <TextBox x:Name="game_id_in_payment" Grid.Column="1" Margin="10,0,0,0"/>
+                                </Grid>
+                                <Grid Margin="0,5,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="200"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="Cost:"/>
+                                    <TextBox x:Name="cost_payment" Grid.Column="1" Margin="10,0,0,0"/>
+                                </Grid>
+                                <Grid Margin="0,5,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="200"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="Payment method:"/>
+                                    <TextBox x:Name="pay_method" Grid.Column="1" Margin="10,0,0,0"/>
+                                </Grid>
+                                <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                                    <Button Content="Додати" Click="AddPayment_Click"/>
+                                    <Button Content="Видалити" Margin="10,0,0,0" Click="DeletePayment_Click"/>
+                                    <TextBox x:Name="delete_payment" Width="50" Grid.Column="1" Margin="10,0,0,0"/>
+                                    <TextBlock Text=" - Payment id delete"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem x:Name="listGames">
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="3">List Games</TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <StackPanel>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="345"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <DataGrid Grid.Row="0" x:Name="listGamesDataGrid1" ItemsSource="{Binding Products}"/>
+                            <StackPanel Grid.Row="1">
+                                <Grid Margin="0,5,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="200"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="Game name:"/>
+                                    <TextBox x:Name="game_name_in_game" Grid.Column="1" Margin="10,0,0,0"/>
+                                </Grid>
+                                <Grid Margin="0,5,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="200"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="Company developer:"/>
+                                    <TextBox x:Name="company_develop_in_game" Grid.Column="1" Margin="10,0,0,0"/>
+                                </Grid>
+                                <Grid Margin="0,5,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="200"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="Company publisher:"/>
+                                    <TextBox x:Name="compan_publish_in_game" Grid.Column="1" Margin="10,0,0,0"/>
+                                </Grid>
+                                <Grid Margin="0,5,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="200"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="Genre:"/>
+                                    <TextBox x:Name="genre_in_game" Grid.Column="1" Margin="10,0,0,0"/>
+                                </Grid>
+                                <Grid Margin="0,5,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="200"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="Description:"/>
+                                    <TextBox x:Name="descrip_in_game" Grid.Column="1" Margin="10,0,0,0"/>
+                                </Grid>
+                                <Grid Margin="0,5,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="200"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="Release year:"/>
+                                    <TextBox x:Name="release_year_in_game" Grid.Column="1" Margin="10,0,0,0"/>
+                                </Grid>
+                                <Grid Margin="0,5,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="200"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="Platform:"/>
+                                    <TextBox x:Name="platform_in_game" Grid.Column="1" Margin="10,0,0,0"/>
+                                </Grid>
+                                <Grid Margin="0,5,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="200"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="Price:"/>
+                                    <TextBox x:Name="price_in_game" Grid.Column="1" Margin="10,0,0,0"/>
+                                </Grid>
+                                <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                                    <Button Content="Додати" Click="AddListGame_Click"/>
+                                    <Button Content="Видалити" Margin="10,0,0,0" Click="DeleteListGame_Click"/>
+                                    <TextBox x:Name="delete_game" Width="50" Grid.Column="1" Margin="10,0,0,0"/>
+                                    <TextBlock Text=" - Game id delete"/>
+                                    <Button Content= "Сортувати за роком релізу" Margin="10,0,0,0" Click="SortReleaseGame_Click"/>
+                                    <TextBox x:Name="genre_search" Width="150" Grid.Column="1" Margin="10,0,0,0"/>
+                                    <Button Content= "Показати обраный жанр" Margin="10,0,0,0" Click="ViewGameGenre_Click"/>
+                                    <Button Content= "Оновленая" Margin="10,0,0,0" Click="UpdateTableGame_Click"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem x:Name="requirement">
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="3">Requirement</TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <StackPanel>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="395"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <DataGrid Grid.Row="0" x:Name="requirementDataGrid1"/>
+                            <StackPanel Grid.Row="1">
+                                <Grid Margin="0,5,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="200"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="Game_id:"/>
+                                    <TextBox x:Name="game_id_in_requirement" Grid.Column="1" Margin="10,0,0,0"/>
+                                </Grid>
+                                <Grid Margin="0,5,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="200"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="Operating_system:"/>
+                                    <TextBox x:Name="oper_system_in_requirement" Grid.Column="1" Margin="10,0,0,0"/>
+                                </Grid>
+                                <Grid Margin="0,5,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="200"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="Processor:"/>
+                                    <TextBox x:Name="processor_in_requirement" Grid.Column="1" Margin="10,0,0,0"/>
+                                </Grid>
+                                <Grid Margin="0,5,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="200"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="Ram:"/>
+                                    <TextBox x:Name="ram_in_requirement" Grid.Column="1" Margin="10,0,0,0"/>
+                                </Grid>
+                                <Grid Margin="0,5,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="200"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="Video card:"/>
+                                    <TextBox x:Name="video_card_in_requirement" Grid.Column="1" Margin="10,0,0,0"/>
+                                </Grid>
+                                <Grid Margin="0,5,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="200"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="Disk space:"/>
+                                    <TextBox x:Name="disk_space_in_requirement" Grid.Column="1" Margin="10,0,0,0"/>
+                                </Grid>
+                                <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                                    <Button Content="Додати" Click="AddRequirement_Click"/>
+                                    <Button Content="Видалити" Margin="10,0,0,0" Click="DeleteRequirement_Click"/>
+                                    <TextBox x:Name="delete_requirement" Width="50" Grid.Column="1" Margin="10,0,0,0"/>
+                                    <TextBlock Text=" - Game id delete"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem x:Name="rating">
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="3">Rating</TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <StackPanel>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="455"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <DataGrid Grid.Row="0" x:Name="ratingDataGrid1"/>
+                            <StackPanel Grid.Row="1">
+                                <Grid Margin="0,5,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="200"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="Game id:"/>
+                                    <TextBox x:Name="game_id_in_rating" Grid.Column="1" Margin="10,0,0,0"/>
+                                </Grid>
+                                <Grid Margin="0,5,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="200"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="Rating number:"/>
+                                    <TextBox x:Name="rating_number_in_rating" Grid.Column="1" Margin="10,0,0,0"/>
+                                </Grid>
+                                <Grid Margin="0,5,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="200"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="Number of evalution:"/>
+                                    <TextBox x:Name="number_of_evalution_in_rating" Grid.Column="1" Margin="10,0,0,0"/>
+                                </Grid>
+                                <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                                    <Button Content="Додати" Click="AddRating_Click"/>
+                                    <Button Content="Видалити" Margin="10,0,0,0" Click="DeleteRating_Click"/>
+                                    <TextBox x:Name="delete_rating" Width="50" Grid.Column="1" Margin="10,0,0,0"/>
+                                    <TextBlock Text=" - Game id delete"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem x:Name="feedback">
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="3">Feedback</TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <StackPanel>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="415"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <DataGrid Grid.Row="0" x:Name="feedbackDataGrid1"/>
+                            <StackPanel Grid.Row="1">
+                                <Grid Margin="0,5,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="200"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="User id:"/>
+                                    <TextBox x:Name="user_id_in_feedback" Grid.Column="1" Margin="10,0,0,0"/>
+                                </Grid>
+                                <Grid Margin="0,5,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="200"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="Game id:"/>
+                                    <TextBox x:Name="game_id_in_feedback" Grid.Column="1" Margin="10,0,0,0"/>
+                                </Grid>
+                                <Grid Margin="0,5,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="200"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="Date review:"/>
+                                    <TextBox x:Name="date_review_in_feedback" Grid.Column="1" Margin="10,0,0,0"/>
+                                </Grid>
+                                <Grid Margin="0,5,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="200"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="Feedback:"/>
+                                    <TextBox x:Name="feedback_in_feedback" Grid.Column="1" Margin="10,0,0,0"/>
+                                </Grid>
+                                <Grid Margin="0,5,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="200"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="Evaluation:"/>
+                                    <TextBox x:Name="evaluation_in_feedback" Grid.Column="1" Margin="10,0,0,0"/>
+                                </Grid>
+                                <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                                    <Button Content="Додати" Click="AddFeedback_Click"/>
+                                    <Button Content="Видалити" Margin="10,0,0,0" Click="DeleteFeedback_Click"/>
+                                    <TextBox x:Name="delete_feedback" Width="50" Grid.Column="1" Margin="10,0,0,0"/>
+                                    <TextBlock Text=" - User id delete"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+                </TabItem.Content>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
